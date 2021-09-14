@@ -1,0 +1,32 @@
+{% extends 'schoolapp/Links.html' %}
+
+{% block content %}
+
+<div class="container ">
+    <div class="row">
+    <div class="col-md-9">
+        <h5>Attendance:</h5>
+
+        <div class="card card-body">
+            <table class="table table-sm">
+                <tr>
+                    <th>Student Id</th>
+                    <th>Student Name</th>
+                    <th>Attended Lectures</th>
+                    <th>Total Lectures</th>
+                </tr>
+                {% for a in attendance %}
+                <tr>
+                    <td>{{a.StudentId}} </td>
+                    <td>{{a.StudentName}} </td>
+                    <td>{{a.LecturesAttended}} </td>
+                    <td> {{a.TotalLectures}} </td>
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+    </div>
+</div>
+
+<br><br>
+{% endblock %}
